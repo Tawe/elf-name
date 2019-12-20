@@ -174,9 +174,6 @@ const dropDownStyles = {
   textTransform: 'capitalize'
 }
 
-
-
-
 function App() {
   const [name, setName] =  useState(0)
   const handleClick = () =>{
@@ -187,22 +184,24 @@ function App() {
   }
   const monthOptions = months.map(({month}) => <option key={month}>{month}</option>)
   const letterOptions = letters.map(({letter}) => <option key={letter}>{letter}</option>)
-
   const letterSelect = useRef();
   const monthSelect = useRef();
+
   return (
      <div className="App">
-      <h1>Hit Submit to see your Elf Name</h1>
-      <div className="nameDiv">{name ? name : ''}</div>
-      <div>
-        <label>Select the first letter of your first name</label>
-        <select ref={letterSelect} style={dropDownStyles}>{letterOptions}</select>
+        <div className="wrapper">
+          <h1>Hit Submit to see your Elf Name</h1>
+          <div className="nameDiv">{name ? name : ''}</div>
+          <div>
+            <label>Select the first letter of your first name</label>
+            <select ref={letterSelect} style={dropDownStyles}>{letterOptions}</select>
+          </div>
+          <div>
+            <label>Select the Month you where born in</label>
+            <select ref={monthSelect} style={dropDownStyles}>{monthOptions}</select>
+          </div>
+          <button onClick={()=>handleClick()}>Submit</button>
       </div>
-      <div>
-        <label>Select the Month you where born in</label>
-        <select ref={monthSelect} style={dropDownStyles}>{monthOptions}</select>
-      </div>
-      <button onClick={()=>handleClick()}>Submit</button>
     </div>
   );
 }
