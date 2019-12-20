@@ -8,7 +8,7 @@ const months = [
   },
   {
     month: 'feburary',
-    names:['Jingle Bells', 'Floppy-Feet', 'Run-Balls']
+    names:['Jingle Bells', 'Floppy-Feet', 'Rum-Balls']
   },
   {
     month: 'march',
