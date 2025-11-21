@@ -55,12 +55,14 @@ select {
   margin:0 auto;
   margin-top: 10px;
   margin-bottom: 10px;
-}
-select {
   flex: 1;
   padding: 0 .5em;
   color: black;
   cursor: pointer;
+}
+
+.select-dropdown {
+  text-transform: capitalize;
 }
 /* Arrow */
 select::after {
@@ -86,6 +88,14 @@ select::after {
 }
 
 
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  margin-top: 9px;
+}
+
 button {
     width: 222px;
     height: 30px;
@@ -95,10 +105,25 @@ button {
     color: white;
     font-size: 1em;
     font-weight: bold;
-    margin-top: 9px;
     cursor: pointer;
+    transition: background 0.2s ease;
 }
 
 button:hover{
   background: #0F8A5F;
+}
+
+button:active {
+  background: #0A6B47;
+  transform: scale(0.98);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.button-secondary {
+  background: #CC231E;
+  border: 2px solid white;
+}
+
+.button-secondary:hover {
+  background: #A01A16;
 }

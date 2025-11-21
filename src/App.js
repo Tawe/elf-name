@@ -1,5 +1,6 @@
-import React, {useState, useRef} from 'react';
+import React, {useState} from 'react';
 import './App.css';
+import {getElfName} from './elfNameUtils';
 
 const months = [
   {
@@ -7,7 +8,7 @@ const months = [
     names:['Sugar-Cookies', 'Angel-Pants', 'Sugar Plum', 'Frost-Feet']
   },
   {
-    month: 'feburary',
+    month: 'february',
     names:['Jingle Bells', 'Floppy-Feet', 'Rum-Balls', 'Sugar-Loaf']
   },
   {
@@ -158,49 +159,49 @@ const letters = [
     }
 ]
 
-
-const getName = (month, letter)=> {
-  const monthObj = months.filter(monthArr => monthArr.month === month)[0]
-  const letterObj = letters.filter(letterArr => letterArr.letter === letter)[0]
-  
-  const monthName = monthObj.names[Math.floor(Math.random()*monthObj.names.length)]
-  const letterName = letterObj.names[Math.floor(Math.random()*letterObj.names.length)]
-
-  return `${letterName} ${monthName}`;
-}
-
-
-const dropDownStyles = {
-  textTransform: 'capitalize'
-}
-
 function App() {
-  const [name, setName] =  useState(0)
-  const handleClick = () =>{
-    const letter = letterSelect.current
-    const month = monthSelect.current
-    const name = getName(month.options[month.selectedIndex].value, letter.options[letter.selectedIndex].value)
-    setName(name);
-  }
-  const monthOptions = months.map(({month}) => <option key={month}>{month}</option>)
-  const letterOptions = letters.map(({letter}) => <option key={letter}>{letter}</option>)
-  const letterSelect = useRef();
-  const monthSelect = useRef();
+  const [elfName, setElfName] = useState('');
+  const [selectedLetter, setSelectedLetter] = useState('a');
+  const [selectedMonth, setSelectedMonth] = useState('january');
+
+  const handleGenerate = () => {
+    const name = getElfName(selectedLetter, selectedMonth, months, letters);
+    setElfName(name);
+  };
+
+  const monthOptions = months.map(({month}) => (
+    <option key={month} value={month}>{month}</option>
+  ));
+  const letterOptions = letters.map(({letter}) => (
+    <option key={letter} value={letter}>{letter}</option>
+  ));
 
   return (
      <div className="App">
         <div className="wrapper">
           <h1>Hit Submit to see your Elf Name</h1>
-          <div className="nameDiv">{name ? name : ''}</div>
+          <div className="nameDiv">{elfName || ''}</div>
           <div>
             <label>Select the first letter of your first name</label>
-            <select ref={letterSelect} style={dropDownStyles}>{letterOptions}</select>
+            <select 
+              value={selectedLetter} 
+              onChange={(e) => setSelectedLetter(e.target.value)}
+              className="select-dropdown"
+            >
+              {letterOptions}
+            </select>
           </div>
           <div>
-            <label>Select the Month you where born in</label>
-            <select ref={monthSelect} style={dropDownStyles}>{monthOptions}</select>
+            <label>Select the Month you were born in</label>
+            <select 
+              value={selectedMonth} 
+              onChange={(e) => setSelectedMonth(e.target.value)}
+              className="select-dropdown"
+            >
+              {monthOptions}
+            </select>
           </div>
-          <button onClick={()=>handleClick()}>Submit</button>
+          <button onClick={handleGenerate}>Submit</button>
       </div>
     </div>
   );
