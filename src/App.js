@@ -193,12 +193,6 @@ function App() {
 
   return (
      <main className="App" role="main">
-        <div className="snowflake">❄</div>
-        <div className="snowflake">❄</div>
-        <div className="snowflake">❄</div>
-        <div className="snowflake">❄</div>
-        <div className="snowflake">❄</div>
-        <div className="snowflake">❄</div>
         <div className="wrapper">
           <header>
             <h1>🎄 Hit Submit to see your Elf Name 🎄</h1>
