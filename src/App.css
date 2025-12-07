@@ -176,7 +176,6 @@ button {
 }
 
 button::before {
-  content: '✨';
   margin-right: 6px;
   font-size: 0.9em;
 }
