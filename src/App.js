@@ -179,8 +179,9 @@ function App() {
 
   const handleShareLinkedIn = () => {
     const baseUrl = window.location.origin + window.location.pathname;
-    const summary = `🎄 My elf name is ${elfName}! Try the Elf Name Generator - a fun holiday tool for team activities and Christmas fun!`;
-    const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(baseUrl)}&summary=${encodeURIComponent(summary)}`;
+    const title = `Elf Name Generator 🎄 - Discover Your Holiday Elf Name`;
+    const summary = `🎄 My elf name is ${elfName}! Try the Elf Name Generator - a fun holiday tool for team activities and Christmas fun! Generate your unique elf name based on your first name and birth month. Perfect for Christmas team activities and spreading holiday cheer!`;
+    const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(baseUrl)}&title=${encodeURIComponent(title)}&summary=${encodeURIComponent(summary)}`;
     window.open(linkedInUrl, '_blank', 'width=550,height=420');
   };
 
