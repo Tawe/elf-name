@@ -192,7 +192,7 @@ function App() {
   return (
      <div className="App">
         <div className="wrapper">
-          <h1>Hit Submit to see your Elf Name</h1>
+          <h1>🎄 Hit Submit to see your Elf Name 🎄</h1>
           <div className="nameDiv">{elfName || ''}</div>
           <div>
             <label>Select the first letter of your first name</label>
