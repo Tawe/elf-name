@@ -169,6 +169,20 @@ function App() {
     setElfName(name);
   };
 
+  const handleShareTwitter = () => {
+    const text = `My elf name is ${elfName}! 🎄 Find yours at:`;
+    const url = window.location.href;
+    const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+    window.open(twitterUrl, '_blank', 'width=550,height=420');
+  };
+
+  const handleShareLinkedIn = () => {
+    const text = `My elf name is ${elfName}! 🎄 Find yours here:`;
+    const url = window.location.href;
+    const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+    window.open(linkedInUrl, '_blank', 'width=550,height=420');
+  };
+
   const monthOptions = months.map(({month}) => (
     <option key={month} value={month}>{month}</option>
   ));
@@ -202,6 +216,24 @@ function App() {
             </select>
           </div>
           <button onClick={handleGenerate}>Submit</button>
+          {elfName && (
+            <div className="share-buttons">
+              <button 
+                onClick={handleShareTwitter} 
+                className="share-button share-twitter"
+                aria-label="Share on Twitter"
+              >
+                Share on Twitter
+              </button>
+              <button 
+                onClick={handleShareLinkedIn} 
+                className="share-button share-linkedin"
+                aria-label="Share on LinkedIn"
+              >
+                Share on LinkedIn
+              </button>
+            </div>
+          )}
       </div>
     </div>
   );

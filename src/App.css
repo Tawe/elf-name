@@ -127,3 +127,51 @@ button:active {
 .button-secondary:hover {
   background: #A01A16;
 }
+
+.share-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.share-button {
+  width: 222px;
+  height: 30px;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  font-size: 0.9em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.share-twitter {
+  background: #1DA1F2;
+}
+
+.share-twitter:hover {
+  background: #0d8bd9;
+}
+
+.share-twitter:active {
+  background: #0a6fa8;
+  transform: scale(0.98);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.share-linkedin {
+  background: #0077B5;
+}
+
+.share-linkedin:hover {
+  background: #006399;
+}
+
+.share-linkedin:active {
+  background: #004d73;
+  transform: scale(0.98);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
