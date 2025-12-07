@@ -177,7 +177,6 @@ function App() {
   };
 
   const handleShareLinkedIn = () => {
-    const text = `My elf name is ${elfName}! 🎄 Find yours here:`;
     const url = window.location.href;
     const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
     window.open(linkedInUrl, '_blank', 'width=550,height=420');
