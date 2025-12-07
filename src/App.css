@@ -171,6 +171,8 @@ button {
     position: relative;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     letter-spacing: 0.5px;
+    margin-top: 10px;
+    height: 40px;
 }
 
 button::before {
