@@ -190,33 +190,45 @@ function App() {
   ));
 
   return (
-     <div className="App">
+     <main className="App" role="main">
         <div className="wrapper">
-          <h1>🎄 Hit Submit to see your Elf Name 🎄</h1>
-          <div className="nameDiv">{elfName || ''}</div>
-          <div>
-            <label>Select the first letter of your first name</label>
-            <select 
-              value={selectedLetter} 
-              onChange={(e) => setSelectedLetter(e.target.value)}
-              className="select-dropdown"
-            >
-              {letterOptions}
-            </select>
-          </div>
-          <div>
-            <label>Select the Month you were born in</label>
-            <select 
-              value={selectedMonth} 
-              onChange={(e) => setSelectedMonth(e.target.value)}
-              className="select-dropdown"
-            >
-              {monthOptions}
-            </select>
-          </div>
-          <button onClick={handleGenerate}>Submit</button>
+          <header>
+            <h1>🎄 Hit Submit to see your Elf Name 🎄</h1>
+          </header>
+          <section aria-label="Elf name result">
+            <div className="nameDiv" role="status" aria-live="polite">
+              {elfName || ''}
+            </div>
+          </section>
+          <form onSubmit={(e) => { e.preventDefault(); handleGenerate(); }} aria-label="Elf name generator form">
+            <div>
+              <label htmlFor="letter-select">Select the first letter of your first name</label>
+              <select 
+                id="letter-select"
+                value={selectedLetter} 
+                onChange={(e) => setSelectedLetter(e.target.value)}
+                className="select-dropdown"
+                aria-label="First letter of your first name"
+              >
+                {letterOptions}
+              </select>
+            </div>
+            <div>
+              <label htmlFor="month-select">Select the Month you were born in</label>
+              <select 
+                id="month-select"
+                value={selectedMonth} 
+                onChange={(e) => setSelectedMonth(e.target.value)}
+                className="select-dropdown"
+                aria-label="Month you were born"
+              >
+                {monthOptions}
+              </select>
+            </div>
+            <button type="submit" onClick={handleGenerate}>Submit</button>
+          </form>
           {elfName && (
-            <div className="share-buttons">
+            <section className="share-buttons" aria-label="Share your elf name">
               <button 
                 onClick={handleShareTwitter} 
                 className="share-button share-twitter"
@@ -231,10 +243,10 @@ function App() {
               >
                 Share on LinkedIn
               </button>
-            </div>
+            </section>
           )}
       </div>
-    </div>
+    </main>
   );
 }
 

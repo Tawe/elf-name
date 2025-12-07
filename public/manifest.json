@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Elf Name",
+  "name": "Elf Name Generator",
+  "description": "Generate your unique holiday elf name based on your first name and birth month",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +21,8 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#CC231E",
+  "background_color": "#34A65F",
+  "orientation": "portrait-primary",
+  "categories": ["entertainment", "games", "lifestyle"]
 }
