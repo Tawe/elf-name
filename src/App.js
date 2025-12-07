@@ -170,15 +170,17 @@ function App() {
   };
 
   const handleShareTwitter = () => {
-    const text = `My elf name is ${elfName}! 🎄 Find yours at:`;
-    const url = window.location.href;
-    const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+    const baseUrl = window.location.origin + window.location.pathname;
+    const text = `🎄 My elf name is ${elfName}! Discover your holiday elf name with this fun Christmas generator! 🎅`;
+    const hashtags = 'ElfNameGenerator,Christmas,HolidayFun,TeamBuilding';
+    const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(baseUrl)}&hashtags=${encodeURIComponent(hashtags)}`;
     window.open(twitterUrl, '_blank', 'width=550,height=420');
   };
 
   const handleShareLinkedIn = () => {
-    const url = window.location.href;
-    const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+    const baseUrl = window.location.origin + window.location.pathname;
+    const summary = `🎄 My elf name is ${elfName}! Try the Elf Name Generator - a fun holiday tool for team activities and Christmas fun!`;
+    const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(baseUrl)}&summary=${encodeURIComponent(summary)}`;
     window.open(linkedInUrl, '_blank', 'width=550,height=420');
   };
 
