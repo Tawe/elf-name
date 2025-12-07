@@ -39,10 +39,8 @@ h1::after {
 }
 
 .App{
-  margin: 0 auto;
   width: 380px;
   font-size: 18px;
-  margin-top: 20px;
   text-align: center;
   padding: 45px;
   background: #CC231E;
@@ -56,7 +54,6 @@ h1::after {
     0 10px 30px rgba(0, 0, 0, 0.2),
     0 0 0 1px rgba(255, 255, 255, 0.1) inset,
     0 0 40px rgba(255, 255, 255, 0.1);
-  position: relative;
   overflow: hidden;
 }
 
