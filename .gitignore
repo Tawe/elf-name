@@ -100,3 +100,5 @@ storybook-static
 # Temporary folders
 tmp/
 temp/
+
+SECURITY.md
