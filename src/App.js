@@ -179,9 +179,8 @@ function App() {
 
   const handleShareLinkedIn = () => {
     const baseUrl = window.location.origin + window.location.pathname;
-    const title = `Elf Name Generator 🎄 - Discover Your Holiday Elf Name`;
-    const summary = `🎄 My elf name is ${elfName}! Try the Elf Name Generator - a fun holiday tool for team activities and Christmas fun! Generate your unique elf name based on your first name and birth month. Perfect for Christmas team activities and spreading holiday cheer!`;
-    const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(baseUrl)}&title=${encodeURIComponent(title)}&summary=${encodeURIComponent(summary)}`;
+    // LinkedIn reads from Open Graph meta tags, not URL parameters
+    const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(baseUrl)}`;
     window.open(linkedInUrl, '_blank', 'width=550,height=420');
   };
 
